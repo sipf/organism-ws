@@ -1,0 +1,14 @@
+{
+    "name": "Service Informatique de Polynesie francaise",
+    "acronym": "sipf",
+    "type": {
+        "id": 1
+    },
+    "description": "test2",
+    "statut": {
+        "id": 1
+    },
+    "logo_slug": "https://bin.gov.pf/public/logo/no-logo.svg",
+    "icon_slug": "https://bin.gov.pf/public/icon/no-icon.svg",
+    "website_slug": "https://www.service-public.pf/no-website"
+}
