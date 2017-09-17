@@ -1,12 +1,14 @@
 package pf.net.api.organism.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Contact {
 
     @Id

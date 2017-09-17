@@ -1,14 +1,15 @@
 package pf.net.api.organism.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Statut {
 
     @Id

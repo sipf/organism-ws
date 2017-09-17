@@ -1,7 +1,5 @@
 package pf.net.api.organism.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.NotBlank;
@@ -15,7 +13,7 @@ import java.util.List;
 public class Type {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotBlank(message = "Type name can not be empty, null or with empty space")

@@ -7,11 +7,9 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.*;
 import java.util.List;
 
-
-@Entity(name = "organism")
+@Entity
 @Getter
 @Setter
-@Table(name = "organism")
 public class Organism {
 
     /*
@@ -28,7 +26,7 @@ public class Organism {
 
     private String acronym;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "type_id")
     private Type type;
 
@@ -36,7 +34,7 @@ public class Organism {
     @Column(nullable = false)
     private String description;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "statut_id")
     private Statut statut;
 
@@ -47,7 +45,7 @@ public class Organism {
     @OneToMany(mappedBy = "organism")
     private List<Contact> contacts;
 
-    @OneToMany(mappedBy = "organism", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy = "organism")
     private List<Mission> missions;
 
     @OneToMany(mappedBy = "organism")
