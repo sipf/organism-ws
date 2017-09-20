@@ -35,6 +35,7 @@ public class Organism {
     @Column(nullable = false, unique = true)
     private String name;
 
+    @Column(nullable = true)
     private String acronym;
 
     @ManyToOne
@@ -49,9 +50,14 @@ public class Organism {
     @JoinColumn(name = "statut_id")
     private Statut statut;
 
-    private String logo_slug;
-    private String icon_slug;
-    private String website_slug;
+    @Column(nullable = false)
+    private String logoSlug;
+
+    @Column(nullable = false)
+    private String iconSlug;
+
+    @Column(nullable = false)
+    private String websiteSlug;
 
     @OneToMany(mappedBy = "organism")
     private List<Contact> contacts;
