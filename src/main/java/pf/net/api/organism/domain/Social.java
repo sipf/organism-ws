@@ -19,7 +19,7 @@ public class Social {
             strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
             parameters = {
                     @Parameter(name = "sequence_name", value = "SOCIAL_SEQUENCE"),
-                    @Parameter(name = "initial_value", value = "1000"),
+                    @Parameter(name = "initial_value", value = "0"),
                     @Parameter(name = "increment_size", value = "1")
             }
     )
