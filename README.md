@@ -1,11 +1,13 @@
-## Organism-ws
+## Organism-ws [![Build Status](https://travis-ci.org/sipf/organism-ws.svg?branch=develop)](https://travis-ci.org/sipf/organism-ws)
+
+[Quality Gate status](https://sonarcloud.io/dashboard?id=pf.net.api.organism)
 
 This project is used for proof of concept only. Of course, you can contribute, you just need to fork 
 and PR your feature.
 
-You can access the data in this repository :
+You can access to the data in this repository :
 
-* [https://github.com/sipf/organism-ws/blob/develop/src/main/resources/data-h2.sql](https://github.com/sipf/organism-ws/blob/develop/src/main/resources/data-h2.sql)
+* [https://github.com/sipf/organism-ws/blob/develop/src/main/resources/data.sql](https://github.com/sipf/organism-ws/blob/develop/src/main/resources/data.sql)
 
 ### Usage
 
@@ -15,10 +17,15 @@ Start the container :
 docker run -p 8080:8080 sipf/organism-ws
 ```
 
-You can then log to [http://127.0.0.1:8080](http://127.0.0.1:8080) to use the service or you can simply use this link : 
- [https://organism-ws.herokuapp.com](https://organism-ws.herokuapp.com).
+You can then log to [http://127.0.0.1:8080](http://127.0.0.1:8080) to use the service or the review apps on 
+ [heroku](https://organism-ws.herokuapp.com) with curl :
  
-The login is admin and the password is password. The heroku instance means to be demo only and there is no security constraint about it.
+```
+curl -u admin:password https://organism-ws.herokuapp.com
+```
+ 
+The login is admin and the password is password. The heroku instance means to be demo only and there is no security constraint about it 
+(note : heroku shutdown the app if it is not used for a while. If you use the curl command, you need to wait a moment, so the app can be restart).
 
 ### Default Configuration
 
@@ -38,10 +45,14 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+    database: postgresql
+    generate-ddl: true
   datasource:
     url: ${JDBC_DATABASE_URL}
     username: ${JDBC_DATABASE_USERNAME}
     password: ${JDBC_DATABASE_PASSWORD}
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
 security:
   user:
     name: admin
