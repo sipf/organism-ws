@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: organisms
+  cloud:
+    config:
+      uri: https://supervisor:supervisor@config-service-ws.herokuapp.com
